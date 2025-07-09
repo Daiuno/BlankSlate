@@ -7,41 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03CF5588072013D8858EEDF8EAFAE0F7 /* Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C8F6FEFB971AABA257CA320B15AC11 /* Impl.swift */; };
-		06E80919F349F901461C6EBE2C51AEC0 /* BlankSlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880EBB64F477E3B0BF098AD4C7B2F47 /* BlankSlate.swift */; };
-		089E2C2EFB04E0F1859916264D9DFBD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF85981192A72FDFB494989114C7605 /* Foundation.framework */; };
-		0F9D286BF83FEF56EB029FE432985092 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
-		15277335BCB4732D105CB2B0B6DA2331 /* BlankSlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880EBB64F477E3B0BF098AD4C7B2F47 /* BlankSlate.swift */; };
-		1DA9900859BE8CCD3673D29047D05C88 /* BlankSlate-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F5A8EFE7AC0994C06F61CC394F5A43 /* BlankSlate-tvOS-dummy.m */; };
-		204680ECEA7F7C6AF7BE328A1CA0C45F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D294C023D8B61DE7086251F4ED89C6 /* DataSource.swift */; };
-		24A6C5A77819E0469D33568732EA18F0 /* BlankSlate-tvOS-BlankSlate in Resources */ = {isa = PBXBuildFile; fileRef = F57D2B1FE8BDDFF36B3CCD8DC5668A0D /* BlankSlate-tvOS-BlankSlate */; };
-		2AC52867148F468770D5485E83DC4F9C /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9B3730852E029C8815D631F199EA2 /* Delegate.swift */; };
-		2EC29C1993476F2E7F5AFC9F9F56ECF0 /* PrivacyInfo.xcprivacy in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
-		2F86493D793F5228FFDF4D6093798D91 /* BlankSlate-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A44B80078E1F737406A244AA287AC8D5 /* BlankSlate-iOS-dummy.m */; };
-		390786A9F55C0EDEE3A6FD137C69C07C /* Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C8F6FEFB971AABA257CA320B15AC11 /* Impl.swift */; };
-		39D965F3DA13DE64AD4E7E71FFB58730 /* BlankSlate-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7036DEA3043C174B7D394488CB1247E5 /* BlankSlate-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BCC481C45A389E638E80256E5FD67C6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
-		4EF545AF6B06E64C40524A811538D47C /* PrivacyInfo.xcprivacy in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
-		5DEF7FCDFD836488B0F60955AABDAD22 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4FA5F79848627B933D951120611E8 /* Model.swift */; };
-		6E93105893601095FB13806D33A7EAA8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4FA5F79848627B933D951120611E8 /* Model.swift */; };
-		7C06EACC49A2C01580F22EDD504FAA5F /* BlankSlate-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF493A28F920629E3686F3F1D494F01C /* BlankSlate-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C575BA34EFC565170A6009E624605A5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B306E28A626B818999ECE2BFB099E6 /* View.swift */; };
-		8102B49DA882ADE84CF37B39AEC43634 /* BlankSlate-iOS-BlankSlate in Resources */ = {isa = PBXBuildFile; fileRef = 980F4B1C8BA7B5D74649F93728FF6A22 /* BlankSlate-iOS-BlankSlate */; };
-		8C5E9BBF7C758498B2BF46FF61BA73C6 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9B3730852E029C8815D631F199EA2 /* Delegate.swift */; };
-		9B6F59CC9CA7CD531CA92B40AAA7EEC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78BCAA5ADF3BC1E026134E815495ECA /* Foundation.framework */; };
-		A5F4AA12B6117B088CF8C94753000AA3 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D294C023D8B61DE7086251F4ED89C6 /* DataSource.swift */; };
-		A6BC1567DDD62B90E177E6A00399327C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B306E28A626B818999ECE2BFB099E6 /* View.swift */; };
+		08DDF0F3569BF869915A4E133B04630C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B306E28A626B818999ECE2BFB099E6 /* View.swift */; };
+		0C83852696983DAA3E36DC17604E4543 /* BlankSlate-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A44B80078E1F737406A244AA287AC8D5 /* BlankSlate-iOS-dummy.m */; };
+		25ED5F25CD4D93ED21039920CCAA936C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4FA5F79848627B933D951120611E8 /* Model.swift */; };
+		2E06359221EDFA84C11216E9688C2CDA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
+		2EB18C90B13D99BA662755D4FF37DB13 /* BlankSlate-tvOS-BlankSlate in Resources */ = {isa = PBXBuildFile; fileRef = F57D2B1FE8BDDFF36B3CCD8DC5668A0D /* BlankSlate-tvOS-BlankSlate */; };
+		37B410ABF712CE588FA532F9D4DE4A8A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D294C023D8B61DE7086251F4ED89C6 /* DataSource.swift */; };
+		3B364FB8D1810B315D36B713F6C6FA61 /* BlankSlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880EBB64F477E3B0BF098AD4C7B2F47 /* BlankSlate.swift */; };
+		4C0024D78200A205E322A316A18FCE02 /* PrivacyInfo.xcprivacy in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
+		5BEDB81EC56449F6993583C53C730025 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
+		75C2B821CB437E1685D7B7A37AF1C352 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A9FAAF7C10D6AB624B7B10B7E8218B /* Foundation.framework */; };
+		781BE6407D7841BDBA932A907663BF49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937F7E245B7397467237B5EFFB97D2B9 /* Foundation.framework */; };
+		7F780BFFFDF5F9C3BC645268BFBBB218 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4FA5F79848627B933D951120611E8 /* Model.swift */; };
+		8DFC7A4165CCBF980881D46B70B6270E /* BlankSlate-iOS-BlankSlate in Resources */ = {isa = PBXBuildFile; fileRef = 980F4B1C8BA7B5D74649F93728FF6A22 /* BlankSlate-iOS-BlankSlate */; };
+		971270493CC16DB2CC7D354B7E4AD75A /* Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C8F6FEFB971AABA257CA320B15AC11 /* Impl.swift */; };
+		9CEC4CF915BEF1E2FF4C4684468A5B5C /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9B3730852E029C8815D631F199EA2 /* Delegate.swift */; };
+		A7D3A8870FEA9F25F6D43BDC79DEB6F0 /* BlankSlate-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF493A28F920629E3686F3F1D494F01C /* BlankSlate-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B297C75CF771E4226F0AC5F5949CD6F4 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9B3730852E029C8815D631F199EA2 /* Delegate.swift */; };
+		B2D6B73E9ED8EE6EAAB3AB75D824996C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B306E28A626B818999ECE2BFB099E6 /* View.swift */; };
+		BBA7E60C18E18CFD15865985608F16F3 /* BlankSlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880EBB64F477E3B0BF098AD4C7B2F47 /* BlankSlate.swift */; };
+		BFC956CDA80C38EB9C75799757925152 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D294C023D8B61DE7086251F4ED89C6 /* DataSource.swift */; };
+		D097E7F6DDCD239550C5FACC28DAD7FE /* PrivacyInfo.xcprivacy in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */; };
+		D0CCEAF05B735AF6D3DE70815A617105 /* Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C8F6FEFB971AABA257CA320B15AC11 /* Impl.swift */; };
+		DCF948B185F26DB9A00EEB94DD43E652 /* BlankSlate-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7036DEA3043C174B7D394488CB1247E5 /* BlankSlate-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9D7BE6E7FFEFBB0CCA215953048C713 /* BlankSlate-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F5A8EFE7AC0994C06F61CC394F5A43 /* BlankSlate-tvOS-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		16DC76400D2C13B19F6F1289FBF3F753 /* PBXContainerItemProxy */ = {
+		271731443FB3F848671BB7F8F2731FCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0BD1973AF55F5DFE5EEF6D2382391832 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C30DA5E10515F78FE2362704AA455288;
 			remoteInfo = "BlankSlate-iOS-BlankSlate";
 		};
-		B8C94A84EBEC76EE73770A03CE7FCF5A /* PBXContainerItemProxy */ = {
+		6F23317966F618885E76B8DC2E6E743E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0BD1973AF55F5DFE5EEF6D2382391832 /* Project object */;
 			proxyType = 1;
@@ -55,6 +55,7 @@
 		44D294C023D8B61DE7086251F4ED89C6 /* DataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = Sources/DataSource.swift; sourceTree = "<group>"; };
 		4BA9B3730852E029C8815D631F199EA2 /* Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delegate.swift; path = Sources/Delegate.swift; sourceTree = "<group>"; };
 		50CB818EEA1395603AA060B8D07D918A /* BlankSlate-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BlankSlate-tvOS-prefix.pch"; path = "../BlankSlate-tvOS/BlankSlate-tvOS-prefix.pch"; sourceTree = "<group>"; };
+		51A9FAAF7C10D6AB624B7B10B7E8218B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		56D05BF359D05BC4F6149FDC832325D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		5880EBB64F477E3B0BF098AD4C7B2F47 /* BlankSlate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlankSlate.swift; path = Sources/BlankSlate.swift; sourceTree = "<group>"; };
 		684513DB7862227D8F99946719B94C26 /* ResourceBundle-BlankSlate-BlankSlate-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "ResourceBundle-BlankSlate-BlankSlate-tvOS-Info.plist"; path = "../BlankSlate-tvOS/ResourceBundle-BlankSlate-BlankSlate-tvOS-Info.plist"; sourceTree = "<group>"; };
@@ -64,18 +65,17 @@
 		7B5F0906B83E1A963E71979F65574676 /* BlankSlate-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "BlankSlate-tvOS.debug.xcconfig"; path = "../BlankSlate-tvOS/BlankSlate-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7F351DECD765078425A694C6C1883AA2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		82F5A8EFE7AC0994C06F61CC394F5A43 /* BlankSlate-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BlankSlate-tvOS-dummy.m"; path = "../BlankSlate-tvOS/BlankSlate-tvOS-dummy.m"; sourceTree = "<group>"; };
+		937F7E245B7397467237B5EFFB97D2B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		961CC9E0E1859008A489CF60FE5134E7 /* ResourceBundle-BlankSlate-BlankSlate-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BlankSlate-BlankSlate-iOS-Info.plist"; sourceTree = "<group>"; };
 		9778E372DAB7B32D368E372A5BAD1F42 /* BlankSlate-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlankSlate-iOS-prefix.pch"; sourceTree = "<group>"; };
 		980F4B1C8BA7B5D74649F93728FF6A22 /* BlankSlate-iOS-BlankSlate */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "BlankSlate-iOS-BlankSlate"; path = BlankSlate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA7B643971A5F4BFA2983BF1104BA1B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		A44B80078E1F737406A244AA287AC8D5 /* BlankSlate-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BlankSlate-iOS-dummy.m"; sourceTree = "<group>"; };
 		A7DAB565655A3E2785AA3E9911807DCC /* BlankSlate-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "BlankSlate-iOS"; path = BlankSlate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABF85981192A72FDFB494989114C7605 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AF493A28F920629E3686F3F1D494F01C /* BlankSlate-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlankSlate-iOS-umbrella.h"; sourceTree = "<group>"; };
 		B03AFCA85E5143CCCE3DA4865A2D8DA0 /* BlankSlate-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "BlankSlate-tvOS-Info.plist"; path = "../BlankSlate-tvOS/BlankSlate-tvOS-Info.plist"; sourceTree = "<group>"; };
 		B2B306E28A626B818999ECE2BFB099E6 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		C5C8F6FEFB971AABA257CA320B15AC11 /* Impl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Impl.swift; sourceTree = "<group>"; };
-		C78BCAA5ADF3BC1E026134E815495ECA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DAD4FA5F79848627B933D951120611E8 /* Model.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Sources/Model.swift; sourceTree = "<group>"; };
 		E1BF268FB1DAB748A0402DC3EFC2A997 /* BlankSlate.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BlankSlate.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EC581391BF51AA2BBF7DC289A1E6B29A /* BlankSlate-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "BlankSlate-tvOS.release.xcconfig"; path = "../BlankSlate-tvOS/BlankSlate-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,33 +86,33 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00E02C7299FD06A49B5F7F965A51DB7D /* Frameworks */ = {
+		08FF80DA75E828A51AE4F669A4D46509 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25D6D7216971E702AB2257F4915E8A2D /* Frameworks */ = {
+		3C2CD886BC7B7E595712F14D272A46D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				089E2C2EFB04E0F1859916264D9DFBD5 /* Foundation.framework in Frameworks */,
+				781BE6407D7841BDBA932A907663BF49 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		518DC29C364B2A0164A75A88786D75BB /* Frameworks */ = {
+		AD8CE13BD0DD6920B48E5A6D7739A608 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD3B23C7F373D93DA167E265DD3AB476 /* Frameworks */ = {
+		D17EACB998D898D3965BBE134701DD44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6F59CC9CA7CD531CA92B40AAA7EEC8 /* Foundation.framework in Frameworks */,
+				75C2B821CB437E1685D7B7A37AF1C352 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,19 +145,11 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		3CF74371E1510BFAB20CBD03A41F6C54 /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				ABF85981192A72FDFB494989114C7605 /* Foundation.framework */,
-			);
-			name = tvOS;
-			sourceTree = "<group>";
-		};
 		730A95BF544203FE1CF0EC9C971D294B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				901BC6C1FC8A8A679F092BD910FCBC85 /* iOS */,
-				3CF74371E1510BFAB20CBD03A41F6C54 /* tvOS */,
+				F59D7464E3EB2C2C86D1CBC4E3AB8D93 /* iOS */,
+				91AE816FABBA2875B64D0372A95FD819 /* tvOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,12 +164,12 @@
 			path = Sources/Internal;
 			sourceTree = "<group>";
 		};
-		901BC6C1FC8A8A679F092BD910FCBC85 /* iOS */ = {
+		91AE816FABBA2875B64D0372A95FD819 /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				C78BCAA5ADF3BC1E026134E815495ECA /* Foundation.framework */,
+				937F7E245B7397467237B5EFFB97D2B9 /* Foundation.framework */,
 			);
-			name = iOS;
+			name = tvOS;
 			sourceTree = "<group>";
 		};
 		A1F401E56EA81E2792D8A52A36812E0F = {
@@ -224,22 +216,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F59D7464E3EB2C2C86D1CBC4E3AB8D93 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				51A9FAAF7C10D6AB624B7B10B7E8218B /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0F9AF169C9E85CB6852D99AFE85AFB2D /* Headers */ = {
+		BF3C03ABE687AD547CA3C8F79F2E44AC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D965F3DA13DE64AD4E7E71FFB58730 /* BlankSlate-tvOS-umbrella.h in Headers */,
+				A7D3A8870FEA9F25F6D43BDC79DEB6F0 /* BlankSlate-iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C621354C698D6AFA0060A384F1807B62 /* Headers */ = {
+		CF5468120EDC814909B50AE0FD2B66CD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C06EACC49A2C01580F22EDD504FAA5F /* BlankSlate-iOS-umbrella.h in Headers */,
+				DCF948B185F26DB9A00EEB94DD43E652 /* BlankSlate-tvOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,11 +248,11 @@
 /* Begin PBXNativeTarget section */
 		6A0AD5EA59408234445A157CD9A77AC2 /* BlankSlate-tvOS-BlankSlate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD9B6263868505041190AA0397EDDD17 /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS-BlankSlate" */;
+			buildConfigurationList = F5E6C706C3B3F282CAABE80FC1E4B371 /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS-BlankSlate" */;
 			buildPhases = (
-				89CB2660CA58A0007EDFB896720E30FD /* Sources */,
-				518DC29C364B2A0164A75A88786D75BB /* Frameworks */,
-				F1616177BF8824D5710FB17F2A78136A /* Resources */,
+				34E8B0C47A0308B504C73E5CD6B19C32 /* Sources */,
+				08FF80DA75E828A51AE4F669A4D46509 /* Frameworks */,
+				2E397CCE2D69D6D2F840E628F62027C9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -265,17 +265,17 @@
 		};
 		B5B576134BD56665F8540355CB5F289E /* BlankSlate-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CADBD38D50E9C85DF0EC54D1ECC9A8B /* Build configuration list for PBXNativeTarget "BlankSlate-iOS" */;
+			buildConfigurationList = CD03615321A14E36D37E030ED01FC5DF /* Build configuration list for PBXNativeTarget "BlankSlate-iOS" */;
 			buildPhases = (
-				C621354C698D6AFA0060A384F1807B62 /* Headers */,
-				1F1AF665AA31AD70E9336DE7B5ED021E /* Sources */,
-				DD3B23C7F373D93DA167E265DD3AB476 /* Frameworks */,
-				5C45E18871A9D56317158A25A794C358 /* Resources */,
+				BF3C03ABE687AD547CA3C8F79F2E44AC /* Headers */,
+				E92DC8446E7E39677050985856A4D761 /* Sources */,
+				D17EACB998D898D3965BBE134701DD44 /* Frameworks */,
+				A490E88AE314872C56D81C0C7AD26284 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B0EBD56BECFD8578BF1872E89224A488 /* PBXTargetDependency */,
+				FE8CB0D56B85DED09D7185CFB7AF74D0 /* PBXTargetDependency */,
 			);
 			name = "BlankSlate-iOS";
 			productName = BlankSlate;
@@ -284,11 +284,11 @@
 		};
 		C30DA5E10515F78FE2362704AA455288 /* BlankSlate-iOS-BlankSlate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEDF9BBDFBB7D15B9CDF597B0E11E5F3 /* Build configuration list for PBXNativeTarget "BlankSlate-iOS-BlankSlate" */;
+			buildConfigurationList = 32D7D0D9E80E4253413AA2A603C4569C /* Build configuration list for PBXNativeTarget "BlankSlate-iOS-BlankSlate" */;
 			buildPhases = (
-				7361D5A7C56439302C937D96CB48DB7C /* Sources */,
-				00E02C7299FD06A49B5F7F965A51DB7D /* Frameworks */,
-				F6E9C1A50F93194AD8992B7C052EDA9D /* Resources */,
+				3A44BB7C19F5A2270E5F90AA0D107839 /* Sources */,
+				AD8CE13BD0DD6920B48E5A6D7739A608 /* Frameworks */,
+				D0680EEFD47D717A56BC7780C201313D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -301,17 +301,17 @@
 		};
 		F2AA396B2EB0D21F37B15E2DBAD01D9E /* BlankSlate-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48FEC170E077E051AEA1EAB3FF83AE91 /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS" */;
+			buildConfigurationList = C85B59879465A7604FA05FA2DDF49DCC /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS" */;
 			buildPhases = (
-				0F9AF169C9E85CB6852D99AFE85AFB2D /* Headers */,
-				AC140FDBD24CE9C78CE381B57D73E965 /* Sources */,
-				25D6D7216971E702AB2257F4915E8A2D /* Frameworks */,
-				8B1BB3353AC2A0A734B19B388615FCE3 /* Resources */,
+				CF5468120EDC814909B50AE0FD2B66CD /* Headers */,
+				6B14F31740443FD194D70F9FAB89A860 /* Sources */,
+				3C2CD886BC7B7E595712F14D272A46D7 /* Frameworks */,
+				F0F218085C072C805709DD5873B07D0F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6CCFC31669B17AFC9A8F62B5712F29B4 /* PBXTargetDependency */,
+				80B23F9F1F6529D89FDAFDE23B88E76C /* PBXTargetDependency */,
 			);
 			name = "BlankSlate-tvOS";
 			productName = BlankSlate;
@@ -324,8 +324,8 @@
 		0BD1973AF55F5DFE5EEF6D2382391832 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = F8E34E31975BFFB9D33728EB4F9F6C8F /* Build configuration list for PBXProject "BlankSlate" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -336,6 +336,8 @@
 				en,
 			);
 			mainGroup = A1F401E56EA81E2792D8A52A36812E0F;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = BD69B7773830D20AB7AEA4D7B0055A14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,106 +351,123 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5C45E18871A9D56317158A25A794C358 /* Resources */ = {
+		2E397CCE2D69D6D2F840E628F62027C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8102B49DA882ADE84CF37B39AEC43634 /* BlankSlate-iOS-BlankSlate in Resources */,
+				2E06359221EDFA84C11216E9688C2CDA /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B1BB3353AC2A0A734B19B388615FCE3 /* Resources */ = {
+		A490E88AE314872C56D81C0C7AD26284 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24A6C5A77819E0469D33568732EA18F0 /* BlankSlate-tvOS-BlankSlate in Resources */,
+				8DFC7A4165CCBF980881D46B70B6270E /* BlankSlate-iOS-BlankSlate in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1616177BF8824D5710FB17F2A78136A /* Resources */ = {
+		D0680EEFD47D717A56BC7780C201313D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BCC481C45A389E638E80256E5FD67C6 /* PrivacyInfo.xcprivacy in Resources */,
+				5BEDB81EC56449F6993583C53C730025 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F6E9C1A50F93194AD8992B7C052EDA9D /* Resources */ = {
+		F0F218085C072C805709DD5873B07D0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F9D286BF83FEF56EB029FE432985092 /* PrivacyInfo.xcprivacy in Resources */,
+				2EB18C90B13D99BA662755D4FF37DB13 /* BlankSlate-tvOS-BlankSlate in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1F1AF665AA31AD70E9336DE7B5ED021E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06E80919F349F901461C6EBE2C51AEC0 /* BlankSlate.swift in Sources */,
-				2F86493D793F5228FFDF4D6093798D91 /* BlankSlate-iOS-dummy.m in Sources */,
-				A5F4AA12B6117B088CF8C94753000AA3 /* DataSource.swift in Sources */,
-				2AC52867148F468770D5485E83DC4F9C /* Delegate.swift in Sources */,
-				390786A9F55C0EDEE3A6FD137C69C07C /* Impl.swift in Sources */,
-				5DEF7FCDFD836488B0F60955AABDAD22 /* Model.swift in Sources */,
-				2EC29C1993476F2E7F5AFC9F9F56ECF0 /* PrivacyInfo.xcprivacy in Sources */,
-				7C575BA34EFC565170A6009E624605A5 /* View.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7361D5A7C56439302C937D96CB48DB7C /* Sources */ = {
+		34E8B0C47A0308B504C73E5CD6B19C32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89CB2660CA58A0007EDFB896720E30FD /* Sources */ = {
+		3A44BB7C19F5A2270E5F90AA0D107839 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC140FDBD24CE9C78CE381B57D73E965 /* Sources */ = {
+		6B14F31740443FD194D70F9FAB89A860 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15277335BCB4732D105CB2B0B6DA2331 /* BlankSlate.swift in Sources */,
-				1DA9900859BE8CCD3673D29047D05C88 /* BlankSlate-tvOS-dummy.m in Sources */,
-				204680ECEA7F7C6AF7BE328A1CA0C45F /* DataSource.swift in Sources */,
-				8C5E9BBF7C758498B2BF46FF61BA73C6 /* Delegate.swift in Sources */,
-				03CF5588072013D8858EEDF8EAFAE0F7 /* Impl.swift in Sources */,
-				6E93105893601095FB13806D33A7EAA8 /* Model.swift in Sources */,
-				4EF545AF6B06E64C40524A811538D47C /* PrivacyInfo.xcprivacy in Sources */,
-				A6BC1567DDD62B90E177E6A00399327C /* View.swift in Sources */,
+				BBA7E60C18E18CFD15865985608F16F3 /* BlankSlate.swift in Sources */,
+				E9D7BE6E7FFEFBB0CCA215953048C713 /* BlankSlate-tvOS-dummy.m in Sources */,
+				BFC956CDA80C38EB9C75799757925152 /* DataSource.swift in Sources */,
+				9CEC4CF915BEF1E2FF4C4684468A5B5C /* Delegate.swift in Sources */,
+				971270493CC16DB2CC7D354B7E4AD75A /* Impl.swift in Sources */,
+				25ED5F25CD4D93ED21039920CCAA936C /* Model.swift in Sources */,
+				4C0024D78200A205E322A316A18FCE02 /* PrivacyInfo.xcprivacy in Sources */,
+				08DDF0F3569BF869915A4E133B04630C /* View.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E92DC8446E7E39677050985856A4D761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B364FB8D1810B315D36B713F6C6FA61 /* BlankSlate.swift in Sources */,
+				0C83852696983DAA3E36DC17604E4543 /* BlankSlate-iOS-dummy.m in Sources */,
+				37B410ABF712CE588FA532F9D4DE4A8A /* DataSource.swift in Sources */,
+				B297C75CF771E4226F0AC5F5949CD6F4 /* Delegate.swift in Sources */,
+				D0CCEAF05B735AF6D3DE70815A617105 /* Impl.swift in Sources */,
+				7F780BFFFDF5F9C3BC645268BFBBB218 /* Model.swift in Sources */,
+				D097E7F6DDCD239550C5FACC28DAD7FE /* PrivacyInfo.xcprivacy in Sources */,
+				B2D6B73E9ED8EE6EAAB3AB75D824996C /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6CCFC31669B17AFC9A8F62B5712F29B4 /* PBXTargetDependency */ = {
+		80B23F9F1F6529D89FDAFDE23B88E76C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "BlankSlate-tvOS-BlankSlate";
 			target = 6A0AD5EA59408234445A157CD9A77AC2 /* BlankSlate-tvOS-BlankSlate */;
-			targetProxy = B8C94A84EBEC76EE73770A03CE7FCF5A /* PBXContainerItemProxy */;
+			targetProxy = 6F23317966F618885E76B8DC2E6E743E /* PBXContainerItemProxy */;
 		};
-		B0EBD56BECFD8578BF1872E89224A488 /* PBXTargetDependency */ = {
+		FE8CB0D56B85DED09D7185CFB7AF74D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "BlankSlate-iOS-BlankSlate";
 			target = C30DA5E10515F78FE2362704AA455288 /* BlankSlate-iOS-BlankSlate */;
-			targetProxy = 16DC76400D2C13B19F6F1289FBF3F753 /* PBXContainerItemProxy */;
+			targetProxy = 271731443FB3F848671BB7F8F2731FCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3F8261B11FA4CA0327FE14D71D9D4094 /* Release */ = {
+		132B5D3D57BF9AFE0D11534B2210FF7D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC581391BF51AA2BBF7DC289A1E6B29A /* BlankSlate-tvOS.release.xcconfig */;
+			baseConfigurationReference = 778ABE3568FF4FE6E5E334D23D0B5EE1 /* BlankSlate-iOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BlankSlate-iOS";
+				IBSC_MODULE = BlankSlate;
+				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/ResourceBundle-BlankSlate-BlankSlate-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = BlankSlate;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		2A30E169291B1ED41A6B2068DB502F97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B5F0906B83E1A963E71979F65574676 /* BlankSlate-tvOS.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -458,7 +477,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -468,46 +490,31 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		42B94FE4D7E73DA0C648D350E883476C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 778ABE3568FF4FE6E5E334D23D0B5EE1 /* BlankSlate-iOS.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS.modulemap";
-				PRODUCT_MODULE_NAME = BlankSlate;
-				PRODUCT_NAME = BlankSlate;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		3A5EBFF8B3F19605EBB24A62EC00F10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC581391BF51AA2BBF7DC289A1E6B29A /* BlankSlate-tvOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BlankSlate-tvOS";
+				IBSC_MODULE = BlankSlate;
+				INFOPLIST_FILE = "Target Support Files/BlankSlate-tvOS/ResourceBundle-BlankSlate-BlankSlate-tvOS-Info.plist";
+				PRODUCT_NAME = BlankSlate;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		4B9758B29989187812E6D2B79C4F94E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -576,22 +583,41 @@
 			};
 			name = Debug;
 		};
-		6DA5B240EF28F86F447DB9A55B19E3B1 /* Release */ = {
+		4F2DBBE909445D345017E044C9702ACE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC581391BF51AA2BBF7DC289A1E6B29A /* BlankSlate-tvOS.release.xcconfig */;
+			baseConfigurationReference = 778ABE3568FF4FE6E5E334D23D0B5EE1 /* BlankSlate-iOS.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BlankSlate-tvOS";
-				IBSC_MODULE = BlankSlate;
-				INFOPLIST_FILE = "Target Support Files/BlankSlate-tvOS/ResourceBundle-BlankSlate-BlankSlate-tvOS-Info.plist";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS.modulemap";
+				PRODUCT_MODULE_NAME = BlankSlate;
 				PRODUCT_NAME = BlankSlate;
-				SDKROOT = appletvos;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WRAPPER_EXTENSION = bundle;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		78A68EF23A0C360705686B4BD92447E0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -656,7 +682,96 @@
 			};
 			name = Release;
 		};
-		7CCAAC4593CB1194996E88BF4F49F562 /* Debug */ = {
+		84D0E90EEE019D42CFF41F4E040F82CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689705850FEFA0A6673C6A994F525A59 /* BlankSlate-iOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BlankSlate-iOS";
+				IBSC_MODULE = BlankSlate;
+				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/ResourceBundle-BlankSlate-BlankSlate-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = BlankSlate;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		88CFF530138EB8FA9B93F2F25E9DF1A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC581391BF51AA2BBF7DC289A1E6B29A /* BlankSlate-tvOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS.modulemap";
+				PRODUCT_MODULE_NAME = BlankSlate;
+				PRODUCT_NAME = BlankSlate;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AB0D37A7640DC627D49E8FB1BABA52BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689705850FEFA0A6673C6A994F525A59 /* BlankSlate-iOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS.modulemap";
+				PRODUCT_MODULE_NAME = BlankSlate;
+				PRODUCT_NAME = BlankSlate;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BB3D4E5630B0A39B614510868D101316 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B5F0906B83E1A963E71979F65574676 /* BlankSlate-tvOS.debug.xcconfig */;
 			buildSettings = {
@@ -673,129 +788,41 @@
 			};
 			name = Debug;
 		};
-		BAC7EFD3304C93EC93277318EC40F686 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 778ABE3568FF4FE6E5E334D23D0B5EE1 /* BlankSlate-iOS.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BlankSlate-iOS";
-				IBSC_MODULE = BlankSlate;
-				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/ResourceBundle-BlankSlate-BlankSlate-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = BlankSlate;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		C1EF38B1D2C00142B4D195DA92DAE12B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 689705850FEFA0A6673C6A994F525A59 /* BlankSlate-iOS.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BlankSlate-iOS";
-				IBSC_MODULE = BlankSlate;
-				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/ResourceBundle-BlankSlate-BlankSlate-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = BlankSlate;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		E2F5ADEF82A81654620D50191D735D2E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 689705850FEFA0A6673C6A994F525A59 /* BlankSlate-iOS.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BlankSlate-iOS/BlankSlate-iOS.modulemap";
-				PRODUCT_MODULE_NAME = BlankSlate;
-				PRODUCT_NAME = BlankSlate;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E618F0E27ABA608A4BE8EA3B5748D7DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B5F0906B83E1A963E71979F65574676 /* BlankSlate-tvOS.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BlankSlate-tvOS/BlankSlate-tvOS.modulemap";
-				PRODUCT_MODULE_NAME = BlankSlate;
-				PRODUCT_NAME = BlankSlate;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48FEC170E077E051AEA1EAB3FF83AE91 /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS" */ = {
+		32D7D0D9E80E4253413AA2A603C4569C /* Build configuration list for PBXNativeTarget "BlankSlate-iOS-BlankSlate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E618F0E27ABA608A4BE8EA3B5748D7DF /* Debug */,
-				3F8261B11FA4CA0327FE14D71D9D4094 /* Release */,
+				132B5D3D57BF9AFE0D11534B2210FF7D /* Debug */,
+				84D0E90EEE019D42CFF41F4E040F82CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CADBD38D50E9C85DF0EC54D1ECC9A8B /* Build configuration list for PBXNativeTarget "BlankSlate-iOS" */ = {
+		C85B59879465A7604FA05FA2DDF49DCC /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42B94FE4D7E73DA0C648D350E883476C /* Debug */,
-				E2F5ADEF82A81654620D50191D735D2E /* Release */,
+				2A30E169291B1ED41A6B2068DB502F97 /* Debug */,
+				88CFF530138EB8FA9B93F2F25E9DF1A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD9B6263868505041190AA0397EDDD17 /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS-BlankSlate" */ = {
+		CD03615321A14E36D37E030ED01FC5DF /* Build configuration list for PBXNativeTarget "BlankSlate-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7CCAAC4593CB1194996E88BF4F49F562 /* Debug */,
-				6DA5B240EF28F86F447DB9A55B19E3B1 /* Release */,
+				4F2DBBE909445D345017E044C9702ACE /* Debug */,
+				AB0D37A7640DC627D49E8FB1BABA52BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5E6C706C3B3F282CAABE80FC1E4B371 /* Build configuration list for PBXNativeTarget "BlankSlate-tvOS-BlankSlate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB3D4E5630B0A39B614510868D101316 /* Debug */,
+				3A5EBFF8B3F19605EBB24A62EC00F10B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -805,15 +832,6 @@
 			buildConfigurations = (
 				4B9758B29989187812E6D2B79C4F94E6 /* Debug */,
 				78A68EF23A0C360705686B4BD92447E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FEDF9BBDFBB7D15B9CDF597B0E11E5F3 /* Build configuration list for PBXNativeTarget "BlankSlate-iOS-BlankSlate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BAC7EFD3304C93EC93277318EC40F686 /* Debug */,
-				C1EF38B1D2C00142B4D195DA92DAE12B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
