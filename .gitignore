@@ -92,4 +92,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+# Test results
+*.xcresult
+
 build.out/

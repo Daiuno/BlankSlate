@@ -19,13 +19,13 @@ It will work automatically, by just conforming to BlankSlate.DataSource, and ret
   # 1.13.0: visionOS is recognized as a platform.
   s.cocoapods_version = '>= 1.13.0'
 
-  s.ios.deployment_target = '12.0'
-  s.tvos.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
+  s.tvos.deployment_target = '13.0'
   s.visionos.deployment_target = "1.1"
 
-  s.swift_versions = ['5.0']
+  s.swift_versions = ['5.0', '6.0']
 
-  s.source_files = 'Sources/**/*'
+  s.source_files = 'Sources/**/*.swift'
   
   s.resource_bundles = {'BlankSlate' => ['Sources/PrivacyInfo.xcprivacy']}
 end

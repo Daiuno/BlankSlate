@@ -8,9 +8,16 @@
 
 import UIKit
 
-/// A drop-in UIView extension for showing empty datasets whenever the view has no content to display.
-/// - Attention: It will work automatically, by just conforming to `BlankSlate.DataSource`, and returning the data you want to show.
+/// Internal UIView extension providing the empty dataset mechanism.
+///
+/// Uses Objective-C associated objects to store data source, delegate, status, and the blank slate view.
+/// Method swizzling injects `reloadBlankSlateIfNeeded()` into `UITableView.reloadData()`,
+/// `UITableView.endUpdates()`, and `UICollectionView.reloadData()` so the empty state
+/// updates automatically without caller intervention.
 extension UIView {
+    /// The data source that provides content and configuration for the empty state.
+    /// Setting this to non-nil triggers method swizzling for the appropriate scroll view type.
+    /// Setting it to nil dismisses any visible empty state.
     weak var blankSlateDataSource: BlankSlate.DataSource? {
         get { (objc_getAssociatedObject(self, &kBlankSlateDataSourceKey) as? WeakObject)?.value as? BlankSlate.DataSource }
         set {
@@ -34,6 +41,8 @@ extension UIView {
         }
     }
 
+    /// The delegate that receives lifecycle and interaction callbacks.
+    /// Setting it to nil dismisses any visible empty state.
     weak var blankSlateDelegate: BlankSlate.Delegate? {
         get { (objc_getAssociatedObject(self, &kBlankSlateDelegateKey) as? WeakObject)?.value as? BlankSlate.Delegate }
         set {
@@ -44,11 +53,15 @@ extension UIView {
         }
     }
 
+    /// The current data load status stored via associated object.
+    /// Used by `StatusDrivenDataSource` to determine which state content to display.
     var dataLoadStatus: BlankSlate.DataLoadStatus? {
         get { objc_getAssociatedObject(self, &kBlankSlateStatusKey) as? BlankSlate.DataLoadStatus }
         set { objc_setAssociatedObject(self, &kBlankSlateStatusKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
+    /// Triggers a reload on the underlying view (calls `reloadData()` for table/collection views).
+    /// For plain UIViews, directly calls `reloadBlankSlateIfNeeded()`.
     func reloadIfNeeded() {
         switch self {
         case let tableView as UITableView:              tableView.reloadData()
@@ -57,16 +70,20 @@ extension UIView {
         }
     }
 
+    /// The currently displayed `BlankSlate.View` instance, stored as an associated object.
     var blankSlateView: BlankSlate.View? {
         get { objc_getAssociatedObject(self, &kBlankSlateViewKey) as? BlankSlate.View }
         set { objc_setAssociatedObject(self, &kBlankSlateViewKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
+    /// Whether the empty state view is currently visible (exists and not hidden).
     var isBlankSlateVisible: Bool {
         guard let blankSlateView else { return false }
         return blankSlateView.isHidden == false
     }
 
+    /// Dismisses the empty state view if currently shown.
+    /// Notifies the delegate before and after removal, restores scroll if applicable.
     func dismissBlankSlateIfNeeded() {
         guard let blankSlateView else { return }
         blankSlateDelegate?.blankSlateWillDisappear(self) // Notifies that the empty dataset view will disappear
@@ -81,6 +98,8 @@ extension UIView {
         blankSlateDelegate?.blankSlateDidDisappear(self) // Notifies that the empty dataset view did disappear
     }
 
+    /// Evaluates whether the empty state should be shown or hidden based on item count,
+    /// delegate permissions, and forced display settings. Called automatically after swizzled reloads.
     func reloadBlankSlateIfNeeded() {
         guard let blankSlateDataSource else {
             return dismissBlankSlateIfNeeded()
@@ -98,11 +117,21 @@ extension UIView {
         }
     }
 
+    /// Configures the blank slate view with content from the data source, applies background,
+    /// gradient, alignment, user interaction, constraints, and transition animation.
     private func configureView(_ view: BlankSlate.View, with blankSlateDataSource: BlankSlate.DataSource) {
-        var fadeInDuration: TimeInterval = 0.0
+        var transition: BlankSlate.Transition = .none
         if view.superview == nil {
-            // Configure empty dataset fade in display. Only the first "addSubview" requires gradient animation.
-            fadeInDuration = blankSlateDataSource.fadeInDuration(forBlankSlate: self)
+            // Determine transition: prefer new API, fall back to legacy fadeInDuration
+            let newTransition = blankSlateDataSource.transition(forBlankSlate: self)
+            if case .none = newTransition {
+                let legacyDuration = blankSlateDataSource.fadeInDuration(forBlankSlate: self)
+                if legacyDuration > 0.0 {
+                    transition = .fadeIn(duration: legacyDuration)
+                }
+            } else {
+                transition = newTransition
+            }
             view.alpha = 0.0
 
             if subviews.count > 1 && blankSlateDelegate?.blankSlateShouldBeInsertedAtBack(self) ?? true {
@@ -121,7 +150,10 @@ extension UIView {
         view.alignment = blankSlateDataSource.alignment(forBlankSlate: self)
 
         // Configure the empty dataset view
-        view.backgroundColor = blankSlateDataSource.backgroundColor(forBlankSlate: self) ?? .clear
+        let bgColor = blankSlateDataSource.backgroundColor(forBlankSlate: self)
+        view.backgroundColor = bgColor ?? .clear
+        // Remove any previously added gradient layers before adding new one
+        view.layer.sublayers?.filter({ $0 is CAGradientLayer }).forEach { $0.removeFromSuperlayer() }
         if let backgroundGradient = blankSlateDataSource.backgroundGradient(forBlankSlate: self) {
             view.layer.insertSublayer(backgroundGradient, at: 0)
         }
@@ -135,14 +167,46 @@ extension UIView {
             scrollView.isScrollEnabled = blankSlateDelegate?.blankSlateShouldAllowScroll(scrollView) ?? false // Configure scroll permission
         }
 
-        guard fadeInDuration > 0.0 else {
-            return view.alpha = 1.0
-        }
-        UIView.animate(withDuration: fadeInDuration) {
+        applyTransition(transition, to: view)
+    }
+
+    /// Applies the specified transition animation to the blank slate view.
+    /// Supports fade, slide up/down, scale, and bounce spring animations.
+    private func applyTransition(_ transition: BlankSlate.Transition, to view: UIView) {
+        switch transition {
+        case .none:
             view.alpha = 1.0
+        case .fadeIn(let duration):
+            UIView.animate(withDuration: duration) { view.alpha = 1.0 }
+        case .slideUp(let duration):
+            view.transform = CGAffineTransform(translationX: 0, y: 40)
+            UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut) {
+                view.alpha = 1.0
+                view.transform = .identity
+            }
+        case .slideDown(let duration):
+            view.transform = CGAffineTransform(translationX: 0, y: -40)
+            UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut) {
+                view.alpha = 1.0
+                view.transform = .identity
+            }
+        case .scale(let duration):
+            view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut) {
+                view.alpha = 1.0
+                view.transform = .identity
+            }
+        case .bounce(let duration):
+            view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8) {
+                view.alpha = 1.0
+                view.transform = .identity
+            }
         }
     }
 
+    /// Populates the blank slate view with image, title, detail, button, or custom view
+    /// elements by querying the data source for each.
     private func configureElements(for view: BlankSlate.View, with blankSlateDataSource: BlankSlate.DataSource) {
         // If a non-nil custom view is available, let's configure it instead
         if let customView = blankSlateDataSource.customView(forBlankSlate: self) {
@@ -160,8 +224,6 @@ extension UIView {
             // Configure image view animation
             if let animation = blankSlateDataSource.imageAnimation(forBlankSlate: self) {
                 imageView.layer.add(animation, forKey: kEmptyImageViewAnimationKey)
-            } else if imageView.layer.animation(forKey: kEmptyImageViewAnimationKey) != nil {
-                imageView.layer.removeAnimation(forKey: kEmptyImageViewAnimationKey)
             }
         }
 
@@ -172,7 +234,7 @@ extension UIView {
 
         // Configure detail label
         if let detailString = blankSlateDataSource.detail(forBlankSlate: self) {
-            view.makeDetailLabel(with: blankSlateDataSource.layout(forBlankSlate: self, for: .title)).attributedText = detailString
+            view.makeDetailLabel(with: blankSlateDataSource.layout(forBlankSlate: self, for: .detail)).attributedText = detailString
         }
 
         // Configure button
@@ -191,6 +253,8 @@ extension UIView {
         }
     }
 
+    /// Counts the total number of items across all sections in the table/collection view.
+    /// Returns 0 for plain UIViews (always treated as empty).
     private var itemsCount: Int {
         var items: Int = 0
         switch self {
@@ -212,6 +276,8 @@ extension UIView {
         return items
     }
 
+    /// Creates and configures a new `BlankSlate.View` instance, wiring up touch, gesture,
+    /// and tap callbacks to the delegate.
     private func makeBlankSlateView() -> BlankSlate.View {
         let view = BlankSlate.View(frame: .zero)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -225,9 +291,9 @@ extension UIView {
             if let scrollView = blankSlateDelegate as? UIScrollView, scrollView == self {
                 return false
             }
-            if let delegate = blankSlateDelegate as? UIGestureRecognizerDelegate {
-                // defer to blankSlateDelegate's implementation if available
-                return delegate.gestureRecognizer?(of, shouldRecognizeSimultaneouslyWith: other) ?? false
+            if let delegate = blankSlateDelegate as? UIGestureRecognizerDelegate,
+               let result = delegate.gestureRecognizer?(of, shouldRecognizeSimultaneouslyWith: other) {
+                return result
             }
             return false
         }
@@ -242,9 +308,14 @@ extension UIView {
         return view
     }
 
+    /// Performs method swizzling on the given class/selector pair to inject `reloadBlankSlateIfNeeded()`.
+    /// Uses a lookup table to ensure each class+selector combination is swizzled only once.
     private func swizzleIfNeeded(_ originalClass: AnyClass, _ originalSelector: Selector) {
         // Check if the target responds to selector
         guard responds(to: originalSelector) else { return assertionFailure() }
+
+        kIMPLookupLock.lock()
+        defer { kIMPLookupLock.unlock() }
 
         // We make sure that setImplementation is called once per class kind, UITableView or UICollectionView.
         let originalStringSelector = NSStringFromSelector(originalSelector)
@@ -268,7 +339,7 @@ extension UIView {
             originalClosure(owner, originalSelector) // Call original implementation
 
             // We then inject the additional implementation for reloading the empty dataset
-            // Doing it before calling the original implementation does update the 'isBlankSlateVisible' flag on time.
+            // Doing it after calling the original implementation ensures the data source has updated its item count.
             owner.reloadBlankSlateIfNeeded()
         }
 
@@ -281,6 +352,7 @@ extension UIView {
 
 // MARK: - WeakObject
 
+/// A weak wrapper used for associated objects to avoid retain cycles with data source and delegate.
 private class WeakObject {
     private(set) weak var value: AnyObject?
 
@@ -298,9 +370,20 @@ private class WeakObject {
 
 // MARK: - Private keys
 
+#if swift(>=5.10)
+nonisolated(unsafe) private var kBlankSlateDataSourceKey: Void?
+nonisolated(unsafe) private var kBlankSlateDelegateKey: Void?
+nonisolated(unsafe) private var kBlankSlateViewKey: Void?
+nonisolated(unsafe) private var kBlankSlateStatusKey: Void?
+private let kEmptyImageViewAnimationKey = "com.liam.blankSlate.imageViewAnimation"
+private let kIMPLookupLock = NSLock()
+nonisolated(unsafe) private var kIMPLookupTable = [String: (owner: AnyClass, selector: String)](minimumCapacity: 3) // 3 represent the supported base classes
+#else
 private var kBlankSlateDataSourceKey: Void?
 private var kBlankSlateDelegateKey: Void?
 private var kBlankSlateViewKey: Void?
 private var kBlankSlateStatusKey: Void?
 private let kEmptyImageViewAnimationKey = "com.liam.blankSlate.imageViewAnimation"
+private let kIMPLookupLock = NSLock()
 private var kIMPLookupTable = [String: (owner: AnyClass, selector: String)](minimumCapacity: 3) // 3 represent the supported base classes
+#endif

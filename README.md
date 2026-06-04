@@ -1,7 +1,7 @@
 # BlankSlate
 
-[![Swift](https://img.shields.io/badge/Swift-5.10-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.10-Orange?style=flat-square)
-[![Platforms](https://img.shields.io/badge/Platforms-iOS_tvOS_visionOS-yellowgreen?style=flat-square)](https://img.shields.io/badge/Platforms-iOS_tvOS_visionOS-Green?style=flat-square)
+[![Swift](https://img.shields.io/badge/Swift-5.9_|_6.0-orange?style=flat-square)](https://swift.org)
+[![Platforms](https://img.shields.io/badge/Platforms-iOS_tvOS_visionOS-yellowgreen?style=flat-square)](https://developer.apple.com/platforms/)
 [![CocoaPods](https://img.shields.io/cocoapods/v/BlankSlate.svg?style=flat)](https://cocoapods.org/pods/BlankSlate)
 [![SPM](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager)
 [![Carthage](https://img.shields.io/badge/Carthage-supported-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
@@ -21,10 +21,11 @@ BlankSlate is a drop-in UIView extension for showing empty datasets whenever the
 
 ## Requirements
 
-* iOS 12.0+ 
-* tvOS 12.0+ 
-* Xcode 14.1+
-* Swift 5.7.1+
+* iOS 13.0+
+* tvOS 13.0+
+* visionOS 1.0+
+* Xcode 15.0+
+* Swift 5.9+
 
 ## Installation
 
@@ -33,6 +34,7 @@ BlankSlate is a drop-in UIView extension for showing empty datasets whenever the
 #### ...using `swift build`
 
 If you are using the [Swift Package Manager](https://www.swift.org/documentation/package-manager), add a dependency to your `Package.swift` file and import the BlankSlate library into the desired targets:
+
 ```swift
 dependencies: [
     .package(url: "https://github.com/liam-i/BlankSlate.git", from: "0.7.1")
@@ -49,9 +51,9 @@ targets: [
 
 If you are using Xcode, then you should:
 
-- File > Swift Packages > Add Package Dependency
-- Add `https://github.com/liam-i/BlankSlate.git`
-- Select "Up to Next Minor" with "0.7.1"
+* File > Add Package Dependencies...
+* Add `https://github.com/liam-i/BlankSlate.git`
+* Select "Up to Next Minor" with "0.7.1"
 
 > [!TIP]
 > For detailed tutorials, see: [Apple Docs](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app)
@@ -62,9 +64,9 @@ If you're using [CocoaPods](https://cocoapods.org), add this to your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-# Or use CND source
+# Or use CDN source
 # source 'https://cdn.cocoapods.org/'
-platform :ios, '12.0'
+platform :ios, '13.0'
 use_frameworks!
 
 target 'MyApp' do
@@ -86,6 +88,111 @@ github "liam-i/BlankSlate" ~> 0.7.1
 ```
 
 And run `carthage update --platform iOS --use-xcframeworks`.
+
+## Usage
+
+### Basic Setup
+
+Conform to `BlankSlate.DataSource` to provide empty state content, then assign it to your view:
+
+```swift
+import BlankSlate
+
+class MyViewController: UITableViewController, BlankSlate.DataSource, BlankSlate.Delegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.bs.setDataSourceAndDelegate(self)
+    }
+
+    // MARK: - BlankSlate.DataSource
+
+    func image(forBlankSlate view: UIView) -> UIImage? {
+        UIImage(named: "empty_placeholder")
+    }
+
+    func title(forBlankSlate view: UIView) -> NSAttributedString? {
+        NSAttributedString(string: "No Data", attributes: [
+            .font: UIFont.systemFont(ofSize: 20, weight: .medium),
+            .foregroundColor: UIColor.secondaryLabel
+        ])
+    }
+
+    func buttonTitle(forBlankSlate view: UIView, for state: UIControl.State) -> NSAttributedString? {
+        guard state == .normal else { return nil }
+        return NSAttributedString(string: "Reload", attributes: [
+            .font: UIFont.systemFont(ofSize: 16, weight: .semibold),
+            .foregroundColor: UIColor.systemBlue
+        ])
+    }
+
+    // MARK: - BlankSlate.Delegate
+
+    func blankSlate(_ view: UIView, didTapButton sender: UIButton) {
+        // Handle retry
+        loadData()
+    }
+}
+```
+
+The empty dataset displays automatically by observing `reloadData()` calls — no manual reload needed for `UITableView` and `UICollectionView`.
+
+### Status-Driven (Zero Configuration)
+
+For common loading/empty/error patterns, use the built-in `StatusDrivenDataSource`:
+
+```swift
+let statusDS = BlankSlate.StatusDrivenDataSource(view: tableView)
+statusDS.onRetry = { [weak self] in self?.loadData() }
+
+// Trigger state changes:
+tableView.bs.reload(with: .loading)   // Shows spinner
+tableView.bs.reload(with: .success)   // Shows "No Data" if table is empty
+tableView.bs.reload(with: .failure)   // Shows error + retry button
+```
+
+### Plain UIView / UIScrollView
+
+For non-table/collection views, call `reload()` manually:
+
+```swift
+let scrollView = UIScrollView()
+scrollView.bs.dataSource = self
+scrollView.bs.reload()           // Evaluate and show/hide blank slate
+scrollView.bs.dismiss()          // Manually remove blank slate
+```
+
+### SwiftUI
+
+```swift
+import BlankSlate
+
+List(items) { item in
+    ItemRow(item: item)
+}
+.blankSlate(isEmpty: items.isEmpty, title: "No Items", detail: "Pull to refresh")
+```
+
+### Transition Animations
+
+```swift
+func transition(forBlankSlate view: UIView) -> BlankSlate.Transition {
+    .fadeIn(duration: 0.3)    // or .slideUp, .slideDown, .scale, .bounce
+}
+```
+
+### Custom Layout & Alignment
+
+```swift
+func alignment(forBlankSlate view: UIView) -> BlankSlate.Alignment {
+    .center(.offset(y: -50))  // 50pt above center
+}
+
+func layout(forBlankSlate view: UIView, for element: BlankSlate.Element) -> BlankSlate.Layout {
+    .init(edgeInsets: UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16))
+}
+```
+
+For the complete API reference, see the source documentation in `Sources/DataSource.swift` and `Sources/Delegate.swift`.
 
 ## Example
 

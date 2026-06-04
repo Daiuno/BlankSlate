@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -18,13 +18,13 @@ let package = Package(
             name: "BlankSlate",
             path: "Sources",
             resources: [.copy("PrivacyInfo.xcprivacy")],
-            swiftSettings: [.enableExperimentalFeature("StrictConcurrency")]
+            swiftSettings: [.swiftLanguageMode(.v6)]
         ),
         .testTarget(
             name: "BlankSlateTests",
             dependencies: ["BlankSlate"],
             path: "Tests",
-            swiftSettings: [.enableExperimentalFeature("StrictConcurrency")]
+            swiftSettings: [.swiftLanguageMode(.v6)]
         ),
     ]
 )

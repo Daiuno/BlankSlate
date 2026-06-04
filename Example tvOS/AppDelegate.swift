@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  BlankSlate Example
+//  Example tvOS
 //
-//  Created by Liam on 2024/3/11.
+//  Created by Liam on 2024/2/6.
 //  Copyright © 2024 Liam. All rights reserved.
 //
 
