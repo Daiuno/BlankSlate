@@ -97,6 +97,7 @@ extension BlankSlate {
         }
 
         private weak var tapGesture: UITapGestureRecognizer?
+        private var overlayConstraints: [NSLayoutConstraint] = []
         /// The vertical alignment of the content within this view.
         var alignment: Alignment = .center()
 
@@ -115,14 +116,6 @@ extension BlankSlate {
             tap.delegate = self
             addGestureRecognizer(tap)
             tapGesture = tap
-
-#if os(iOS)
-            NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(updateForCurrentOrientation),
-                name: UIDevice.orientationDidChangeNotification,
-                object: nil)
-#endif
         }
 
         @available(*, unavailable)
@@ -131,59 +124,39 @@ extension BlankSlate {
         }
 
         deinit {
-#if os(iOS)
-            NotificationCenter.default.removeObserver(self)
-#endif
 #if DEBUG
             print("👍🏻👍🏻👍🏻 BlankSlate.View is released.")
 #endif
         }
 
-        override func didMoveToSuperview() {
-            updateForCurrentOrientation()
-        }
+        /// Pins this overlay to the host view's edges.
+        /// For scroll views, uses `frameLayoutGuide` so the overlay tracks visible bounds
+        /// and is unaffected by `contentOffset` or `contentInset`.
+        func installOverlayConstraints(relativeTo host: UIView, scrollView: UIScrollView? = nil) {
+            removeOverlayConstraints()
+            translatesAutoresizingMaskIntoConstraints = false
 
-        override func didMoveToWindow() {
-            updateForCurrentOrientation()
-        }
-
-        /// Recalculates frame when orientation or layout changes.
-        /// For scroll views delegates to `syncFrameIfNeeded()`; for plain views uses safe area insets.
-        @objc
-        private func updateForCurrentOrientation() {
-            guard window != nil, let superview else { return }
-
-            guard superview is UIScrollView else {
-                frame = CGRect(x: superview.safeAreaInsets.left,
-                               y: superview.safeAreaInsets.top,
-                               width: superview.bounds.width - superview.safeAreaInsets.left - superview.safeAreaInsets.right,
-                               height: superview.bounds.height - superview.safeAreaInsets.top - superview.safeAreaInsets.bottom)
-                return
+            if let scrollView {
+                overlayConstraints = [
+                    leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor),
+                    trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor),
+                    topAnchor.constraint(equalTo: scrollView.frameLayoutGuide.topAnchor),
+                    bottomAnchor.constraint(equalTo: scrollView.frameLayoutGuide.bottomAnchor),
+                ]
+            } else {
+                overlayConstraints = [
+                    leadingAnchor.constraint(equalTo: host.leadingAnchor),
+                    trailingAnchor.constraint(equalTo: host.trailingAnchor),
+                    topAnchor.constraint(equalTo: host.topAnchor),
+                    bottomAnchor.constraint(equalTo: host.bottomAnchor),
+                ]
             }
-
-            syncFrameIfNeeded()
-            DispatchQueue.main.async { [weak self] in
-                self?.syncFrameIfNeeded()
-            }
+            NSLayoutConstraint.activate(overlayConstraints)
         }
 
-        /// Synchronizes this view's frame to fill the visible area of the parent scroll view,
-        /// accounting for content insets and safe area insets.
-        private func syncFrameIfNeeded() {
-            guard window != nil, let scrollView = superview as? UIScrollView else { return }
-            let size = scrollView.bounds.size
-            let safeInsets = scrollView.safeAreaInsets
-            let isVerticalScroll = scrollView.contentSize.width == scrollView.bounds.width
-
-            var inset = scrollView.contentInset
-            inset = UIEdgeInsets(top: safeInsets.top + inset.top,
-                                 left: safeInsets.left + inset.left,
-                                 bottom: safeInsets.bottom + inset.bottom,
-                                 right: safeInsets.right + inset.right)
-            frame = CGRect(x: isVerticalScroll ? inset.left : 0.0, y: 0.0,
-                           width: size.width - inset.left - inset.right,
-                           height: size.height - inset.top - inset.bottom)
-            scrollView.scrollRectToVisible(frame, animated: false)
+        func removeOverlayConstraints() {
+            NSLayoutConstraint.deactivate(overlayConstraints)
+            overlayConstraints.removeAll()
         }
 
         override func layoutSubviews() {
@@ -220,36 +193,38 @@ extension BlankSlate {
             // Configure accessibility
             configureAccessibility()
 
-            // First, configure the content view constaints The content view must alway be centered to its superview
-            var constraints: [NSLayoutConstraint] = [contentView.widthAnchor.constraint(equalTo: widthAnchor)]
-            
-            let offsetX: CGFloat
-            switch alignment {
-            case let .center(offset):
-                offsetX = offset.x
-                constraints.append(contentView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: offset.y))
-            case let .top(offset):
-                offsetX = offset.x
-                constraints.append(contentView.topAnchor.constraint(equalTo: topAnchor, constant: offset.y))
-            case let .bottom(offset):
-                offsetX = offset.x
-                constraints.append(contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -offset.y))
-            }
-            constraints.append(contentView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: offsetX))
+            var constraints: [NSLayoutConstraint] = []
 
-            // If applicable, set the custom view's constraints
+            // Custom view: overlay → contentView → customView, only edgeInsets are configurable.
             if let element = elements[.custom] {
-                let view = element.view, layout = element.layout
+                let view = element.view
+                let insets = element.layout.edgeInsets
                 constraints += [
-                    view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: layout.edgeInsets.left),
-                    view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -layout.edgeInsets.right),
-                    view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: layout.edgeInsets.top),
-                    view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -layout.edgeInsets.bottom)
+                    contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                    contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                    contentView.topAnchor.constraint(equalTo: topAnchor),
+                    contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
+                    view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: insets.left),
+                    view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -insets.right),
+                    view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: insets.top),
+                    view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -insets.bottom),
                 ]
-                if let height = layout.height {
-                    constraints.append(view.heightAnchor.constraint(equalToConstant: height))
-                }
             } else {
+                constraints.append(contentView.widthAnchor.constraint(equalTo: widthAnchor))
+
+                let offsetX: CGFloat
+                switch alignment {
+                case let .center(offset):
+                    offsetX = offset.x
+                    constraints.append(contentView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: offset.y))
+                case let .top(offset):
+                    offsetX = offset.x
+                    constraints.append(contentView.topAnchor.constraint(equalTo: topAnchor, constant: offset.y))
+                case let .bottom(offset):
+                    offsetX = offset.x
+                    constraints.append(contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -offset.y))
+                }
+                constraints.append(contentView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: offsetX))
                 var previous: ElementView?
                 for key in Element.allCases {
                     guard let element = elements[key] else { continue }
@@ -275,17 +250,17 @@ extension BlankSlate {
             NSLayoutConstraint.activate(constraints)
         }
 
-        override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-            guard let hitView = super.hitTest(point, with: event) else { return nil }
-            if hitView is UIControl {
-                return hitView // Return any UIControl instance such as buttons, segmented controls, switches, etc.
-            }
-
-            if hitView.isEqual(contentView) || hitView.isEqual(elements[.custom]?.view) {
-                return hitView // Return either the contentView or customView
-            }
-            return nil // Touch allowed to pass through
-        }
+//        override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//            guard let hitView = super.hitTest(point, with: event) else { return nil }
+//            if hitView is UIControl {
+//                return hitView // Return any UIControl instance such as buttons, segmented controls, switches, etc.
+//            }
+//
+//            if hitView.isEqual(contentView) || hitView.isEqual(elements[.custom]?.view) {
+//                return hitView // Return either the contentView or customView
+//            }
+//            return nil // Touch allowed to pass through
+//        }
 
         // MARK: - Accessibility
 

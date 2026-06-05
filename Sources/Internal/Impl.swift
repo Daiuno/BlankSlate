@@ -88,6 +88,7 @@ extension UIView {
         guard let blankSlateView else { return }
         blankSlateDelegate?.blankSlateWillDisappear(self) // Notifies that the empty dataset view will disappear
 
+        blankSlateView.removeOverlayConstraints()
         blankSlateView.prepareForReuse()
         blankSlateView.removeFromSuperview()
         self.blankSlateView = nil
@@ -117,11 +118,35 @@ extension UIView {
         }
     }
 
+    /// Attaches the blank slate overlay and pins it to the host view's visible bounds.
+    private func attachBlankSlateView(_ view: BlankSlate.View) {
+        if let scrollView = self as? UIScrollView {
+            if view.superview !== scrollView {
+                view.removeFromSuperview()
+                scrollView.insertSubview(view, at: 0)
+            }
+            view.installOverlayConstraints(relativeTo: scrollView, scrollView: scrollView)
+            return
+        }
+
+        if view.superview == nil {
+            if subviews.count > 1 && blankSlateDelegate?.blankSlateShouldBeInsertedAtBack(self) ?? true {
+                insertSubview(view, at: 0)
+            } else {
+                addSubview(view)
+            }
+        }
+        view.installOverlayConstraints(relativeTo: self)
+    }
+
     /// Configures the blank slate view with content from the data source, applies background,
     /// gradient, alignment, user interaction, constraints, and transition animation.
     private func configureView(_ view: BlankSlate.View, with blankSlateDataSource: BlankSlate.DataSource) {
         var transition: BlankSlate.Transition = .none
-        if view.superview == nil {
+        let wasAttached = view.superview != nil
+        attachBlankSlateView(view)
+
+        if !wasAttached {
             // Determine transition: prefer new API, fall back to legacy fadeInDuration
             let newTransition = blankSlateDataSource.transition(forBlankSlate: self)
             if case .none = newTransition {
@@ -133,12 +158,6 @@ extension UIView {
                 transition = newTransition
             }
             view.alpha = 0.0
-
-            if subviews.count > 1 && blankSlateDelegate?.blankSlateShouldBeInsertedAtBack(self) ?? true {
-                insertSubview(view, at: 0)
-            } else {
-                addSubview(view)
-            }
         }
 
         // Removing view resetting the view and its constraints it very important to guarantee a good state
@@ -280,7 +299,8 @@ extension UIView {
     /// and tap callbacks to the delegate.
     private func makeBlankSlateView() -> BlankSlate.View {
         let view = BlankSlate.View(frame: .zero)
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         view.isTouchAllowed = { [weak self] in
             guard let self, let blankSlateDelegate else { return true }

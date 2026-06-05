@@ -67,7 +67,7 @@ extension BlankSlate {
         /// - Parameters:
         ///   - edgeInsets: Padding around the edges of the element. Default is `UIEdgeInsets(top: 11, left: 16, bottom: 11, right: 16)`.
         ///   - height: Fixed height for the element, or `nil` for adaptive height. Default is `nil`.
-        public init(edgeInsets: UIEdgeInsets = .init(top: 11, left: 16, bottom: 11, right: 16), height: CGFloat? = nil) {
+        public init(edgeInsets: UIEdgeInsets = .zero, height: CGFloat? = nil) {
             self.edgeInsets = edgeInsets
             self.height = height
         }
